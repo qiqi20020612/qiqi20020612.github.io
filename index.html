@@ -28,11 +28,29 @@
                 color: #3391FF;
             }
         }
+        
+        #beian a{
+            display: inline-block;
+            text-decoration: none;
+            height: 20px;
+            line-height: 20px;
+            color: #939393;
+        }
+        #beian img{
+            float: left;
+        }
+        #beian p{
+            float: left;
+            height: 20px;
+            line-height: 20px;
+            margin: 0 0 0 5px;
+        }
     </style>
 </head>
 <body>
     <a href="#"><h1 style="text-align: center;">Github Pages@qiqi20020612.github.io</h1></a>
     <div id="container">
+        <p>Powered by <a href="https://pages.github.com/">Github Pages</a></p>
         <p id="info">
             <strong title="域名">document.domain:</strong><span id="domain"></span><br />
             <strong title="主机名">location.host:</strong><span id="host"></span><br />
@@ -49,17 +67,27 @@
     </div>
     <hr />
     <div id="container">
-        <h2>Dark Mode</h2>
-        <p ondblclick="changedark()">双击切换深色模式</p>
+        <h2>Tools
+        </h2>
+        <button onclick="changedark()">Switch Dark Mode</button>
+        <button onclick="javascript:window.open(btlink)">新窗口打开此页</button><br />
+        <p>联系我</p>
+        <button onclick="javascript:window.open(qq)">QQ</button>
+        <button onclick="javascript:window.open(mail)">Mail</button><br />
+        <p ondblclick="beianview()">双击此处显示备案信息</p>
+        <div id="beian" style="display: none;">
+            <a href="https://beian.miit.gov.cn/">冀ICP备20005159号</a>
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=13040302001199">
+                <img src="https://www.beian.gov.cn/img/ghs.png"/>
+                <p>冀公网安备 13040302001199号</p>
+            </a>
+        </div>
     </div>
-    <!-- <div id="container">
-        <h2></h2>
-        <button onclick="javascript:window.open(link)" style="font-size: 25px;">
-            <img src="" style="height: 50px; width: 50px;" alt="">
-        </button>
-    </div> -->
+    <hr />
     <script type="text/javascript">
-        // var link ='http://'+location.host+':7860/';
+        var btlink='http://'+location.host+'/';
+        var qq='tencent://message/?uin=1761457971';
+        var mail='mailto:qiqi20020612@126.com';
 
         document.getElementById('domain').innerText=document.domain
         document.getElementById('host').innerText=location.host
@@ -69,6 +97,7 @@
             document.getElementById('ua').innerHTML="<strong>UA:</strong><span id='ua'></span>"
             document.getElementById('ua').innerText=navigator.userAgent
         }
+
         function changedark(){
             // Code by Github Coplict
             if(document.body.style.backgroundColor=="rgb(19, 21, 22)"){
@@ -79,7 +108,10 @@
                 document.body.style.color="#D8D4CF"
             }
         }
+
+        function beianview(){
+            document.getElementById('beian').style.display="block"
+        }
     </script>
 </body>
 </html>
-
