@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IIS Windows</title>
+    <title>Github Pages</title>
     <style type="text/css">
         body{
             color: #000000;
@@ -31,40 +31,53 @@
     </style>
 </head>
 <body>
-    <a href=""><h1 style="text-align: center;">IIS Windows@ASUS-TUF-Gaming-TianXuan</h1></a>
+    <a href="#"><h1 style="text-align: center;">Github Pages@qiqi20020612.github.io</h1></a>
     <div id="container">
-        <p id="info" ondblclick="changeinfo()">
-            <strong>document.domain:</strong><span id="domain"></span>
-            <strong>location.host:</strong><span id="host"></span>
-            <strong>document.lastModified:</strong><span id="time"></span><br>
+        <p id="info">
+            <strong title="域名">document.domain:</strong><span id="domain"></span><br />
+            <strong title="主机名">location.host:</strong><span id="host"></span><br />
+            <strong title="文档上次修改时间">document.lastModified:</strong><span id="time"></span><br />
         </p>
-    </div>
-    <hr />
-    <div id="container">
-        <h2>NovelAI 绘图控制台</h2>
-        <button onclick="javascript:window.open(webui)" style="font-size: 25px;">
-            <img src="img/gradiologo.svg" style="height: 50px; width: 50px;" alt="Stable Diffusion">Stable Diffusion
-        </button>
-        <button onclick="javascript:window.open(naifu)" style="font-size: 25px;">
-            <img src="img/novelai-round.png" style="height: 50px; width: 50px;" alt="NAIFU">NAIFU
-        </button>
+        <p id="uainfo" ondblclick="changeinfo()">
+            <strong title="双击显示">User Agent:</strong><span id='ua'>Double click to view</span>
+        </p>
     </div>
     <hr />
     <div id="container">
         <h2>Hello World</h2>
         <p>Hello World</p>
     </div>
+    <hr />
+    <div id="container">
+        <h2>Dark Mode</h2>
+        <p ondblclick="changedark()">双击切换深色模式</p>
+    </div>
+    <!-- <div id="container">
+        <h2></h2>
+        <button onclick="javascript:window.open(link)" style="font-size: 25px;">
+            <img src="" style="height: 50px; width: 50px;" alt="">
+        </button>
+    </div> -->
     <script type="text/javascript">
-        var webui='http://'+location.host+':7860/';
-        var naifu='http://'+location.host+':6969/';
+        // var link ='http://'+location.host+':7860/';
 
         document.getElementById('domain').innerText=document.domain
         document.getElementById('host').innerText=location.host
         document.getElementById('time').innerText=document.lastModified
         
         function changeinfo(){
-            document.getElementById('info').innerHTML="<strong>UA:</strong><span id='ua'></span>"
+            document.getElementById('ua').innerHTML="<strong>UA:</strong><span id='ua'></span>"
             document.getElementById('ua').innerText=navigator.userAgent
+        }
+        function changedark(){
+            // Code by Github Coplict
+            if(document.body.style.backgroundColor=="rgb(19, 21, 22)"){
+                document.body.style.backgroundColor="#0072C6"
+                document.body.style.color="#000000"
+            }else{
+                document.body.style.backgroundColor="#131516"
+                document.body.style.color="#D8D4CF"
+            }
         }
     </script>
 </body>
