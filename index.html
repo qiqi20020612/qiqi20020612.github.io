@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIS Windows</title>
+    <style type="text/css">
+        body{
+            color: #000000;
+            background-color: #0072C6;
+            margin: 0;
+        }
+
+        #container{
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            body{
+                color-scheme: dark;
+                color: #D8D4CF;
+                background-color: #131516;
+            }
+            body a{
+                color: #3391FF;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href=""><h1 style="text-align: center;">IIS Windows@ASUS-TUF-Gaming-TianXuan</h1></a>
+    <div id="container">
+        <p id="info" ondblclick="changeinfo()">
+            <strong>document.domain:</strong><span id="domain"></span>
+            <strong>location.host:</strong><span id="host"></span>
+            <strong>document.lastModified:</strong><span id="time"></span><br>
+        </p>
+    </div>
+    <hr />
+    <div id="container">
+        <h2>NovelAI 绘图控制台</h2>
+        <button onclick="javascript:window.open(webui)" style="font-size: 25px;">
+            <img src="img/gradiologo.svg" style="height: 50px; width: 50px;" alt="Stable Diffusion">Stable Diffusion
+        </button>
+        <button onclick="javascript:window.open(naifu)" style="font-size: 25px;">
+            <img src="img/novelai-round.png" style="height: 50px; width: 50px;" alt="NAIFU">NAIFU
+        </button>
+    </div>
+    <hr />
+    <div id="container">
+        <h2>Hello World</h2>
+        <p>Hello World</p>
+    </div>
+    <script type="text/javascript">
+        var webui='http://'+location.host+':7860/';
+        var naifu='http://'+location.host+':6969/';
+
+        document.getElementById('domain').innerText=document.domain
+        document.getElementById('host').innerText=location.host
+        document.getElementById('time').innerText=document.lastModified
+        
+        function changeinfo(){
+            document.getElementById('info').innerHTML="<strong>UA:</strong><span id='ua'></span>"
+            document.getElementById('ua').innerText=navigator.userAgent
+        }
+    </script>
+</body>
+</html>
+
